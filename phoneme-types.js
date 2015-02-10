@@ -101,6 +101,12 @@ var classificationsByPhoneme = {
   T: 'stop'
 };
 
+var syllableEndingClasses = [
+  'affricate',
+  'aspirate',
+  'stop',
+];
+
 function classifyPhoneme(phoneme) {
   return (phoneme in classificationsByPhoneme) ? 
     classificationsByPhoneme[phoneme] : null;
@@ -127,10 +133,15 @@ function isVowelish(phoneme) {
   return classificationsByPhoneme[phoneme] === 'vowel';
 }
 
+function isSyllableEnder(phoneme) {
+  return syllableEndingClasses.indexOf(classifyPhoneme(phoneme)) !== -1;
+}
+
 module.exports = {
   classifyPhoneme: classifyPhoneme,
   stripStressor: stripStressor,
   getPhonemesInSameClass: getPhonemesInSameClass,
   isConsonantish: isConsonantish,
-  isVowelish: isVowelish
+  isVowelish: isVowelish,
+  isSyllableEnder: isSyllableEnder
 };
