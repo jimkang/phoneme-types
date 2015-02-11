@@ -101,10 +101,23 @@ var classificationsByPhoneme = {
   T: 'stop'
 };
 
-var syllableEndingClasses = [
-  'affricate',
-  'aspirate',
-  'stop',
+// Phonemes that cannot be followed within a syllable.
+var syllableEndingPhonemes = [
+  'CH',
+  'JH',
+  'DH',
+  'SH',
+  'TH',
+  'V',
+  'Z',
+  'ZH',
+  'M',
+  'NG',
+  'B',
+  'D',
+  'G',
+  'K',
+  'T'
 ];
 
 function classifyPhoneme(phoneme) {
@@ -134,7 +147,7 @@ function isVowelish(phoneme) {
 }
 
 function isSyllableEnder(phoneme) {
-  return syllableEndingClasses.indexOf(classifyPhoneme(phoneme)) !== -1;
+  return syllableEndingPhonemes.indexOf(phoneme) !== -1;
 }
 
 module.exports = {
