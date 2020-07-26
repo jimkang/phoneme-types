@@ -1,5 +1,5 @@
 // This is a singleton-style module.
-var _ = require('lodash');
+var without = require('lodash.without');
 
 var phonemeListsByClassification = {
   vowel: [
@@ -129,7 +129,7 @@ function getPhonemesInSameClass(phoneme) {
   var fellows = [];
   var phonemeClass = classifyPhoneme(phoneme);
   if (phonemeClass) {
-    fellows = _.without(phonemeListsByClassification[phonemeClass], phoneme);
+    fellows = without(phonemeListsByClassification[phonemeClass], phoneme);
   }
   return fellows;
 }
