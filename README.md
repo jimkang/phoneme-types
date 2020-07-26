@@ -3,6 +3,8 @@ phoneme-types
 
 Classifies [CMU/ARPAbet-style phonemes](http://www.speech.cs.cmu.edu/cgi-bin/cmudict#phones).
 
+![Node.js CI](https://github.com/jimkang/phoneme-types/workflows/Node.js%20CI/badge.svg)
+
 Installation
 ------------
 
